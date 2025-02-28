@@ -1,0 +1,37 @@
+.chat-interface {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Ensure messages container takes available space but allows input to show */
+.chat-interface .message-list-container {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Important for Firefox */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .chat-interface .message .content {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-interface .message .content {
+    max-width: 90%;
+  }
+  
+  .chat-interface .message .avatar {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .input-area input {
+    padding: 0.8rem;
+  }
+}
